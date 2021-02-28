@@ -3,7 +3,7 @@ const isProduction = process.env.ELEVENTY_ENV === 'production'
 
 module.exports = {
   compressHTML: (content, outputPath) => {
-    if (outputPath.endsWith(".html") && isProduction) {
+    if (outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

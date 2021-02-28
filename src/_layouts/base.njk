@@ -20,8 +20,8 @@
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     {{ content | safe }}
+    <script>
+      {{ js | jsmin | safe }}
+    </script>
   </body>
-  <script>
-    {{ js | jsmin | safe }}
-  </script>
 </html>

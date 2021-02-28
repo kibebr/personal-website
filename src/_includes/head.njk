@@ -1,17 +1,14 @@
 <head>
-  {% include "meta.njk" %}
+  {% include 'meta.njk' %}
   {% if site.env %}
     <!-- capture the CSS content as a Liquid variable -->
     {% set css %}
-      {% include "app.compiled.css" %}
+      {% include 'app.compiled.css' %}
     {% endset %}
     <style> 
       {{ css | safe }}
-      html, body {
-        background: red;
-      }
     </style>
   {% else %}
-    <link rel="stylesheet" href="/static/app.compiled.css">
+    <link rel='stylesheet' href='/static/app.compiled.css'>
   {% endif %}
 </head>

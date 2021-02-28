@@ -1,8 +1,12 @@
----
-layout: base.njk
-title: Vitor's Portfolio
----
+{% set js %}
+  {% include './_assets/scripts/dark-mode.js' %}
+  {% include './_assets/scripts/tab-mouse-detect.js' %}
+{% endset %}
 
+<!DOCTYPE html>
+<html lang='en'>
+{% include 'head.njk' %}
+<body>
 <main id='main' class='antialiased text-black-apple dark:text-white-apple dark:bg-black transition-colors'>
   <section class='px-5 pt-6'>
     <div class='relative max-w-screen-sm m-0 m-auto text-center h-auto flex flex-col items-center'>
@@ -165,3 +169,8 @@ title: Vitor's Portfolio
     </div>
   </section>
 </main>
+  <script>
+    {{ js | jsmin | safe }}
+  </script>
+</body>
+</html>

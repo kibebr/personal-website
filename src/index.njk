@@ -1,25 +1,167 @@
 ---
 layout: base.njk
-title: Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS
+title: Vitor's Portfolio
 ---
 
-<main id="main" class="px-4 max-w-md mx-auto text-center">
-    <img src="/static/icon.svg" alt="Rocket icon" class="w-12 mx-auto my-4 rocket">
-    <h1 class="font-bold text-xl mb-2">JAMStack Web Starter <span class="font-light text-gray-500">v{{ pkg.version }}</span></h1>
-    <p>Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS</p>
+<main id='main' class='antialiased text-black-apple dark:text-white-apple dark:bg-black transition-colors'>
+  <section class='px-5 pt-6'>
+    <div class='relative max-w-screen-sm m-0 m-auto text-center h-auto flex flex-col items-center'>
+      <button id='dark-btn' class='absolute left-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
+        {{ '/src/_assets/icons/night.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+      </button>
+      <button class='absolute right-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white'>
+        {{ '/src/_assets/icons/translate.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+      </button>
+      <video width='150' height='150' preload='none' loop autoplay playsinline muted>
+        <source src='/_assets/videos/compressed.webm' type='video/webm' />
+        <source src='/_assets/videos/memoji.mp4' type='video/mp4' />
+      </video>
+      <h1 class='font-bold text-3xl mb-3'>Hey, I'm Vitor</h1>
+      <p class='text-gray-text w-full md:w-8/12'>Began coding Minecraft mods as a kid and I guess I couldn’t stop ever since. Full-stack web developer. Based in Liverpool, U.K.</p>
+    </div>
+  </section>
 
-    <ul class="md:flex my-4">
-        <li class="md:flex-auto p-2">
-            <a href="https://github.com/scottishstoater/jamstack-web-starter/zipball/master/" class="block no-underline leading-tight p-3 font-bold border-2 border-ws-blue-600 bg-ws-blue-500 text-white rounded hover:bg-ws-blue-600">Download</a>
-        </li>
-        <li class="md:flex-auto p-2">
-            <a href="https://github.com/scottishstoater/jamstack-web-starter#features" class="block no-underline text-black leading-tight p-3 font-bold border-2 rounded hover:bg-gray-100">Get started</a>
-        </li>
-    </ul>
+  <div class='px-5'>
+    <div class='h-px max-w-screen-sm m-0 m-auto bg-gray-slight dark:bg-gray-slight-dark my-5'></div>
+  </div>
 
-    <footer class="text-sm text-gray-500">
-       <p class="flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="w-4 mr-1"><path class="fill-current text-gray-100" d="M32 5H4C1.791 5 0 6.791 0 9v18c0 2.209 1.791 4 4 4h28c2.209 0 4-1.791 4-4V9c0-2.209-1.791-4-4-4z"/><path class="fill-current text-ws-blue-500" d="M13 18S0 8.586 0 8.895v18.21C0 27.414 13 18 13 18zm5 3S3.697 31 4.07 31h27.859C32.303 31 18 21 18 21zm5-3s13 9.414 13 9.105V8.895C36 8.586 23 18 23 18zm-5-3S3.697 5 4.07 5h27.859C32.303 5 18 15 18 15z"/></svg> <span>Proudly crafted in Scotland by <a href="https://www.chriscollins.me">Chris Collins</a></span></p>
-        <p>Go and build something great! 🥳</p>
-    </footer>
+  <section class='px-5'>
+    <div class='max-w-screen-sm m-0 m-auto h-auto flex flex-col'>
+      <h2 class='text-2xl md:text-3xl font-bold'>Projects</h2>
+      <span class='text-gray-text text-md'>What I've done during my free time</span>
+      <ul class='flex flex-col mt-3'>
+        <div>
+          <div class='flex flex-row items-center'>
+            <div class='rounded-2xl bg-gradient-to-r from-pixelado-pink via-pixelado-blue to-pixelado-green w-16 h-16 md:w-18 md:h-18 mr-4'></div>
+            <div class='flex flex-col justify-center'>
+              <h3>Pixelado</h3>
+              <span class='text-gray-text text-smsm'>Draw and share your art</span>
+            </div>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+              {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+            </button>
+          </div>
+          <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
+        </div>
+
+        <div>
+          <div class='flex flex-row mt-3.5 items-center'>
+            <div class='relative rounded-2xl bg-black border border-gray-slight-dark w-16 h-16 md:w-18 md:h-18 mr-4'>
+              <span class='absolute inset-center text-red-500'>f_</span>
+            </div>
+            <div class='flex flex-col justify-center'>
+              <h3>Fastyper</h3>
+              <span class='text-gray-text text-smsm'>Draw and share your art</span>
+            </div>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+              {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+            </button>
+          </div>
+          <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
+        </div>
+
+        <div>
+          <div class='flex flex-row items-center mt-3.5'>
+            <div class='rounded-2xl bg-red-500 w-16 h-16 md:w-18 md:h-18 mr-4'></div>
+            <div class='flex flex-col justify-center'>
+              <h3>Spotiswype</h3>
+              <span class='text-gray-text text-smsm'>Draw and share your art</span>
+            </div>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+              {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+            </button>
+          </div>
+          <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
+        </div>
+        <div>
+          <div class='flex flex-row mt-3.5 items-center'>
+            <div class='rounded-2xl bg-wasm bg-cover w-16 h-16 md:w-18 md:h-18 mr-4'></div>
+            <div class='flex flex-col justify-center'>
+              <h3>WASM Games</h3>
+              <span class='text-gray-text text-smsm'>Games written in C ported to browsers</span>
+            </div>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+              {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
+            </button>
+          </div>
+        </div>
+      </ul>
+
+      <div id='projects-cards' class='flex flex-col mt-3'>
+
+        <div class='w-full h-128 md:h-72 bg-gray rounded-2xl p-8 flex flex-col md:flex-row dark:bg-gray-dark justify-between'>
+          <div class='w-full md:w-1/2 flex flex-col'>
+            <h2 class='text-3xl font-bold'>Portfolio and blog</h2>
+            <p class='text-gray-text'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-500 font-bold hover:underline'>Jamstack</a>.</p>
+            <div class='font-bold flex flex-col md:flex-col text-gray-text text-smsm mt-auto'>
+              <div>
+                <span class=>POWERED BY</span>
+                <div class='flex flex-row'>
+                  {{ '/src/_assets/icons/javascript.svg' | svgContents('w-10 h-10 fill-current mr-1') | safe }}
+                  <a href='https://11ty.dev/'>{{ '/src/_assets/icons/eleventy.svg' | svgContents('w-10 h-10 fill-current') | safe }}</a>
+                  <a href='https://tailwindcss.com/'>{{ '/src/_assets/icons/tailwindcss.svg' | svgContents('w-10 h-10 fill-current') | safe }}</a>
+                </div>
+              </div>
+              <span class='md:mt-3'>VIEW SOURCE</span>
+            </div>
+          </div>
+            <img src='/_assets/images/cel.png' alt='A phone with this portfolio on the screen.' class='filter-dropshadow' />
+          </div>
+        </div>
+
+        <div class='w-full h-128 md:h-72 bg-purple-500 rounded-2xl mt-3 flex flex-row p-8'>
+          <h2 class='text-3xl font-bold text-white-apple'>Spotiswype</h2>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class='px-5'>
+    <div class='h-px max-w-screen-sm m-0 m-auto bg-gray-slight dark:bg-gray-slight-dark my-5'></div>
+  </div>
+  <section class='px-5'>
+    <div class='max-w-screen-sm m-0 m-auto h-auto'>
+      <h2 class='font-bold text-3xl'>Articles</h2>
+      <span class='text-gray-text text-md'>I write sometimes</span>
+      <ul class='flex flex-col'>
+        <div class='flex flex-col md:flex-row mb-3'>
+          <span class='text-gray-text mr-3'>Mar 17</span>
+          <a href='#' class='text-blue-700'>Understanding the binary search algorithm</a>
+        </div>
+        <div class='flex flex-col md:flex-row'>
+          <span class='text-gray-text mr-3'>Mar 17</span>
+          <a href='#' class='text-blue-700'>I made a game in C run in a web browser and so can you</a>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+  <section class='bg-black text-white-apple mt-5 h-auto px-5 py-10'>
+    <div class='max-w-screen-sm m-0 m-auto h-auto text-center'>
+      <h2 class='font-bold text-3xl'>I strive to <span class='text-red-dark'>write maintanable code.</span></h2>
+      <ul class='flex flex-col mt-10'>
+        <div class='font-bold'>
+          <h3 class='text-xl'><span class='text-red-dark'>Performance</span> matters</h3>
+          <p class='text-gray-text text-md'>According to Amazon, lorem ipsum del valle ar to kqkq e;...</p>
+        </div>
+        <div class='font-bold mt-10'>
+          <h3 class='text-xl'><span class='text-blue-dark'>Accessibility</span> is important</h3>
+          <p class='text-gray-text text-md'>Lorem ipsum</p>
+        </div>
+        <div class='font-bold mt-10'>
+          <h3 class='text-xl'><span class='text-orange-dark'>SEO practices</span></h3>
+          <p class='text-gray-text text-md'>Lorem ipsum</p>
+        </div>
+      </ul>
+    </div>
+  </section>
+
+  <section class='flex justify-center px-5 bg-gray-dark text-white-apple h-56'>
+    <div class='flex flex-col text-center py-6 max-w-screen-sm m-0 m-auto'>
+      <h2 class='font-bold text-3xl'>Let's work together.</h2>
+      <p class='text-gray-text mt-3'>Do you have a project in mind? Let's talk about it. Coffee is on me.</p>
+      <a class='mt-3 font-bold text-blue-700 hover:underline' href='mailto:vitordriguesss@gmail.com'>Email me.</a>
+    </div>
+  </section>
 </main>

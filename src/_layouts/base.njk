@@ -1,3 +1,8 @@
+{% set js %}
+  {% include 'src/_assets/scripts/dark-mode.js' %}
+  {% include 'src/_assets/scripts/tab-mouse-detect.js' %}
+{% endset %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,5 +21,7 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     {{ content | safe }}
   </body>
-  <script src="/static/app.bundled.js"></script>
+  <script>
+    {{ js | jsmin | safe }}
+  </script>
 </html>

@@ -1,19 +1,56 @@
 module.exports = {
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'ws-blue': {
-          100: '#E6F0FF',
-          200: '#BFDAFF',
-          300: '#99C3FF',
-          400: '#4D97FE',
-          500: '#006AFE',
-          600: '#005FE5',
-          700: '#004098',
-          800: '#003072',
-          900: '#00204C',
+        pixelado: {
+          pink: '#FA8BFF',
+          blue: '#2BD2FF',
+          green: '#2BFF88'
         },
-      }
+        black: {
+          DEFAULT: '#000',
+          apple: '#111'
+        },
+        white: {
+          DEFAULT: '#ffffff',
+          apple: '#f5f5f7'
+        },
+        blue: {
+          DEFAULT: 'rgb(0, 122, 255)',
+          dark: 'rgb(10, 132, 255)'
+        },
+        orange: {
+          DEFAULT: 'rgb(255, 149, 0)',
+          dark: 'rgb(255, 159, 10)'
+        },
+        gray: {
+          slight: 'rgba(0, 0, 0, 0.1)',
+          text: 'rgb(108, 108, 112)',
+          DEFAULT: '#F2F2F2',
+          'slight-dark': 'rgba(255, 255, 255, 0.1)',
+          dark: '#0d0d0d'
+        },
+        red: {
+          DEFAULT: 'rgb(255, 59, 48)',
+          dark: 'rgb(255, 69, 58)'
+        },
+      },
+      width: {
+        'line': 'calc(99% - 80px)',
+        '18': '4.5rem'
+      },
+      height: {
+        '18': '4.5rem',
+        '112': '28rem',
+        '128': '32rem'
+      },
+      fontSize: {
+        'smsm': '.80rem'
+      },
+      backgroundImage: theme => ({
+        wasm: "url('/_assets/icons/wasm-logo.svg')"
+      })
     },
   },
   variants: {},

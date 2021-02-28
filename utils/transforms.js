@@ -1,5 +1,5 @@
-const htmlmin = require("html-minifier");
-const isProduction = process.env.ELEVENTY_ENV === 'production';
+const htmlmin = require("html-minifier")
+const isProduction = process.env.ELEVENTY_ENV === 'production'
 
 module.exports = {
   compressHTML: (content, outputPath) => {

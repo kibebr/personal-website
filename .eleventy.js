@@ -2,11 +2,11 @@ const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
 const svgContents = require('eleventy-plugin-svg-contents')
+const Image = require('@11ty/eleventy-img')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/static");
   eleventyConfig.addPassthroughCopy("src/_assets/icons");
-  eleventyConfig.addPassthroughCopy("src/_assets/scripts");
   eleventyConfig.addPassthroughCopy("src/_assets/videos");
   eleventyConfig.addPassthroughCopy("src/_assets/images");
 
@@ -24,6 +24,27 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection(collectionName, collections[collectionName])
   })
 
+  // shortcodes
+  eleventyConfig.addNunjucksAsyncShortcode('Image', async (src, alt, classes) => {
+    if (!alt) {
+      throw new Error('Missing alt on image.')
+    }
+    
+
+    const stats = await Image(src, {
+      formats: ['webp'],
+      widths: [225],
+      outputDir: './dist/img/',
+    })
+
+    return Image.generateHTML(stats, {
+      alt,
+      class: classes,
+      loading: 'lazy',
+      decoding: 'async'
+    })
+  })
+
   // This allows Eleventy to watch for file changes during local development.
   eleventyConfig.setUseGitIgnore(false);
 
@@ -34,7 +55,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src/",
       output: "dist",
-      includes: "_includes",
+      includes: '_includes',
       layouts: "_layouts"
     },
     templateFormats: ["html", "md", "njk"],

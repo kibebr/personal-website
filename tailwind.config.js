@@ -38,7 +38,7 @@ module.exports = {
         },
       },
       width: {
-        'line': 'calc(99% - 80px)',
+        'line': 'calc(98.5% - 80px)',
         '17': '4.25rem',
         '18': '4.5rem'
       },
@@ -53,7 +53,10 @@ module.exports = {
       },
       backgroundImage: theme => ({
         wasm: "url('/_assets/icons/wasm-logo.svg')"
-      })
+      }),
+      screens: {
+        'md': '500px'
+      }
     },
   },
   variants: {},

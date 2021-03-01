@@ -33,7 +33,7 @@
   <section class='px-5'>
     <div class='max-w-screen-sm m-0 m-auto h-auto flex flex-col'>
       <h2 class='text-2xl md:text-3xl font-bold'>Projects</h2>
-      <span class='text-gray-text dark:text-gray-text-dark text-md'>What I've done during my free time</span>
+      <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>What I've done during my free time</span>
       <ul class='flex flex-col mt-3'>
         <div>
           <div class='flex flex-row items-center'>
@@ -51,14 +51,14 @@
 
         <div>
           <div class='flex flex-row mt-3.5 items-center'>
-            <div class='relative rounded-2xl bg-black border border-gray-slight-dark w-17 h-17 md:w-18 md:h-18 mr-4'>
+            <div class='relative flex-shrink-0 rounded-2xl bg-black border border-gray-slight-dark w-17 h-17 md:w-18 md:h-18 mr-4'>
               <span class='absolute inset-center text-red-500'>f_</span>
             </div>
             <div class='flex flex-col justify-center'>
               <h3>Fastyper</h3>
-              <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your art</span>
+              <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Community-based speed typing test game</span>
             </div>
-            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white flex-shrink-0'>
               {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
             </button>
           </div>
@@ -70,7 +70,7 @@
             <div class='rounded-2xl bg-red-500 w-17 h-17 md:w-18 md:h-18 mr-4'></div>
             <div class='flex flex-col justify-center'>
               <h3>Spotiswype</h3>
-              <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your art</span>
+              <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Find songs you'll enjoy just by swiping</span>
             </div>
             <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
               {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
@@ -80,12 +80,12 @@
         </div>
         <div>
           <div class='flex flex-row mt-3.5 items-center'>
-            <div class='rounded-2xl bg-wasm bg-cover w-17 h-17 md:w-18 md:h-18 mr-4'></div>
+            <div class='rounded-2xl flex-shrink-0 bg-wasm bg-cover w-17 h-17 md:w-18 md:h-18 mr-4'></div>
             <div class='flex flex-col justify-center'>
               <h3>WASM Games</h3>
               <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Games written in C ported to browsers</span>
             </div>
-            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white'>
+            <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white flex-shrink-0'>
               {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
             </button>
           </div>
@@ -110,7 +110,8 @@
               <span class='md:mt-3'>VIEW SOURCE</span>
             </div>
           </div>
-            <img src='/_assets/images/cel.png' alt='A phone with this portfolio on the screen.' class='filter-dropshadow' />
+          <div class='flex justify-center'>
+            {% Image './src/_assets/images/cel.png', 'A phone with this portfolio on the screen.', 'filter-dropshadow' %}
           </div>
         </div>
 
@@ -129,8 +130,8 @@
   <section class='px-5'>
     <div class='max-w-screen-sm m-0 m-auto h-auto'>
       <h2 class='font-bold text-3xl'>Articles</h2>
-      <span class='text-gray-text dark:text-gray-text-dark text-md'>I write sometimes</span>
-      <ul class='flex flex-col'>
+      <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>I write sometimes</span>
+      <ul class='flex flex-col mt-3'>
         <div class='flex flex-col md:flex-row mb-3'>
           <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
           <a href='#' class='text-blue-700'>Understanding the binary search algorithm</a>
@@ -143,27 +144,46 @@
     </div>
   </section>
 
-  <div class='px-5'>
-    <div class='h-px max-w-screen-sm m-0 m-auto bg-gray-slight dark:bg-gray-slight-dark my-5'></div>
-  </div>
-
-  <section class='bg-black text-white-apple mt-5 h-auto px-5 py-10'>
+  <section class='bg-black text-white-apple mt-5 h-auto px-5 py-20'>
     <div class='max-w-screen-sm m-0 m-auto h-auto text-center'>
-      <h2 class='font-bold text-3xl'>I strive to <span class='text-red-dark'>write maintanable code.</span></h2>
-      <ul class='flex flex-col mt-10'>
-        <div class='font-bold'>
-          <h3 class='text-xl'><span class='text-red-dark'>Performance</span> matters</h3>
-          <p class='text-gray-text-dark text-md'>According to Amazon, lorem ipsum del valle ar to kqkq e;...</p>
-        </div>
-        <div class='font-bold mt-10'>
-          <h3 class='text-xl'><span class='text-blue-dark'>Accessibility</span> is important</h3>
-          <p class='text-gray-text-dark  text-md'>Lorem ipsum</p>
-        </div>
-        <div class='font-bold mt-10'>
-          <h3 class='text-xl'><span class='text-orange-dark'>SEO practices</span></h3>
-          <p class='text-gray-text-dark text-md'>Lorem ipsum</p>
-        </div>
-      </ul>
+      <h2 class='font-bold text-2xl md:text-3xl'>I strive to <span class='text-red-dark'>write maintanable code.</span></h2>
+
+      <ul class='mt-10' aria=label='FAQ'>
+
+        <li class='border-b py-5 pb-4 border-gray-slight-dark'>
+          <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between'>
+            <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
+            <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
+            </button>
+          </div>
+          <div id='content-1' aria-hidden='true'>
+          </div>
+        </li>
+
+        <li class='border-b py-5 pb-4 border-gray-slight-dark'>
+          <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between'>
+            <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
+            <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
+            </button>
+          </div>
+          <div id='content-2' aria-hidden='true'>
+          </div>
+        </li>
+
+        <li class='border-b py-5 pb-4 border-gray-slight-dark'>
+          <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between'>
+            <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
+            <button class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform focus:rotate-45'>
+              {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
+            </button>
+          </div>
+          <div id='content-3' aria-hidden='true'>
+          </div>
+        </li>
+
+      </div>
     </div>
   </section>
 
@@ -171,7 +191,7 @@
     <div class='flex flex-col text-center py-6 max-w-screen-sm m-0 m-auto'>
       <h2 class='font-bold text-3xl'>Let's work together.</h2>
       <p class='text-gray-text-dark mt-3'>Do you have a project in mind? Let's talk about it. Coffee is on me.</p>
-      <a class='mt-3 font-bold text-blue-700 hover:underline' href='mailto:vitordriguesss@gmail.com'>Email me.</a>
+      <a class='mt-3 font-bold text-blue-700 hover:underline' href='mailto:vitordriguesss@gmail.com'>Email me</a>
     </div>
   </section>
 </main>

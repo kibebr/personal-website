@@ -27,6 +27,7 @@ module.exports = {
         gray: {
           slight: 'rgba(0, 0, 0, 0.1)',
           text: 'rgb(108, 108, 112)',
+          'text-dark': '#A1A1A6',
           DEFAULT: '#F2F2F2',
           'slight-dark': 'rgba(255, 255, 255, 0.1)',
           dark: '#0d0d0d'
@@ -38,9 +39,11 @@ module.exports = {
       },
       width: {
         'line': 'calc(99% - 80px)',
+        '17': '4.25rem',
         '18': '4.5rem'
       },
       height: {
+        '17': '4.25rem',
         '18': '4.5rem',
         '112': '28rem',
         '128': '32rem'

@@ -16,7 +16,9 @@ module.exports = {
         cb(null, code)
       } else {
         try {
-          const minified = await minify(code)
+          const minified = await minify(code, {
+            module: true
+          })
           cb(null, minified.code)
         } catch (err) {
           console.error(err)

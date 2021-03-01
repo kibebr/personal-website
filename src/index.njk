@@ -49,7 +49,7 @@
             </button>
           </div>
 
-          <div class='h-0 hidden' aria-hidden='true'>
+          <div class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
             this is the content
           </div>
 
@@ -69,7 +69,7 @@
               {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
             </button>
           </div>
-          <div class='h-0 hidden' aria-hidden='true'>
+          <div class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
             this is the content
           </div>
           <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
@@ -86,7 +86,7 @@
               {{ '/src/_assets/icons/right-arrow.svg' | svgContents('absolute w-4 h-4 inset-center fill-current') | safe }}
             </button>
           </div>
-          <div class='h-0 hidden' aria-hidden='true'>
+          <div class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
             this is the content
           </div>
           <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
@@ -104,8 +104,17 @@
             </button>
           </div>
 
-          <div class='h-0 hidden transition-all' aria-hidden='true'>
+          <div class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
             this is the content
+            </br>
+            this is the content
+            </br>
+            this is the content
+            </br>
+            this is the content
+            </br>
+            this is the content
+            </br>
           </div>
 
         </li>
@@ -171,35 +180,35 @@
       <ul class='mt-10' aria-label='FAQ'>
 
         <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-          <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between accordion'>
+          <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
             <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
             <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
               {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
             </button>
           </div>
-          <div id='content-1' aria-hidden='true' class='hidden h-0'>
+          <div id='content-1' class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
           </div>
         </li>
 
         <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-          <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between accordion'>
+          <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
             <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
             <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
               {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
             </button>
           </div>
-          <div id='content-2' aria-hidden='true' class='hidden h-0'>
+          <div id='content-2' class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
           </div>
         </li>
 
         <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-          <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between accordion'>
+          <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
             <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
             <button class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform focus:rotate-45'>
               {{ '/src/_assets/icons/plus.svg' | svgContents('absolute inset-center w-4 h-4') | safe }}
             </button>
           </div>
-          <div id='content-3' aria-hidden='true' class='hidden h-0'>
+          <div id='content-3' class='overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
             this is the content
           </div>
         </li>
@@ -228,10 +237,9 @@
         const isAlreadyOpen = content.classList.contains('open')
         a.setAttribute('aria-expanded', !isAlreadyOpen)
         content.setAttribute('aria-hidden', isAlreadyOpen)
-        content.classList.toggle('hidden')
         content.classList.toggle('open')
-        content.classList.toggle('max-h-96')
         content.classList.toggle('h-auto')
+        content.classList.toggle('max-h-60')
       }
 
     })

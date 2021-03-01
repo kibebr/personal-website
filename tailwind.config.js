@@ -56,10 +56,17 @@ module.exports = {
       }),
       screens: {
         'md': '500px'
+      },
+      transitionProperty: {
+        'height': 'height, max-height'
       }
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      height: ['hover']
+    }
+  },
   plugins: [],
   purge: process.env.NODE_ENV === 'production' ? {
     enabled: true,

@@ -65,7 +65,6 @@ module.exports = {
     enabled: true,
     content: ['src/**/*.njk', 'src/**/*.js'],
     options: {
-      keyframes: true
     }
   } : {}
 }

@@ -64,5 +64,8 @@ module.exports = {
   purge: process.env.NODE_ENV === 'production' ? {
     enabled: true,
     content: ['src/**/*.njk', 'src/**/*.js'],
+    options: {
+      keyframes: true
+    }
   } : {}
 }

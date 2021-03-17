@@ -1,5 +1,5 @@
 const { DateTime } = require('luxon')
-const { minify } = require('terser')
+const { minify } = require('uglify-js')
 const deasync = require('deasync')
 const isProduction = process.env.ELEVENTY_ENV === 'production'
 
@@ -19,9 +19,8 @@ module.exports = {
         return code
       } else {
         try {
-          const minified = syncMinify(code, {
-            module: true
-          })
+          console.log('minifying...')
+          const minified = minify(code)
           return minified
         } catch (err) {
           console.error(err)

@@ -1,10 +1,70 @@
-<html>
-  <body>
-    test
-    {{ content }}
-    tes
-  </body>
-  <script>
+{% capture js %}
+  {% include 'scripts/dark-mode.js' %}
+  {% include 'scripts/tab-mouse-detect.js' %}
+{% endcapture %}
 
+{% if site.env %}
+  {% capture css %}
+    {% include 'app.compiled.css' %}
+  {% endcapture %}
+{% endif %}
+
+<html lang='en'>
+  <head>
+    {% include 'meta' %}
+
+    {% if site.env == false %}
+      <link rel='stylesheet' href='/static/app.compiled.css'>
+    {% endif %}
+
+    <style>
+      {{ css }}
+      {% include '../_assets/stylesheets/prism.css' %}
+
+      strong {
+        color: rgb(255, 45, 85) !important;
+      }
+
+      html, body {
+        font-family: 'Wotfard';
+      }
+    </style>
+  </head>
+  <body class='antialiased text-black-apple font-wotfard dark:bg-black dark:text-white transition-colors'>
+    <div class='relative max-w-screen-sm m-0 m-auto'>
+      <nav class='bg-white dark:bg-black flex flex-row backdrop-blur fixed p-4 max-w-screen-sm w-full items-center justify-between'>
+        <div class='flex flex-row space-x-2 items-center'>
+          {% Image './src/_assets/images/memoji.png' 'Memoji of me.' 'w-14 h-14' %}
+        </div>
+        <div>
+          <button id='dark-btn' class='w-10 h-10 rounded-full flex justify-center items-center dark:text-white'>
+            {{ '/src/_assets/icons/night.svg' | svgContents: 'w-4 h-4 fill-current' }}
+          </button>
+        </div>
+      </nav>
+      <header class='flex items-end bg-blue dark:bg-blue-dark p-4 h-96'>
+        <h1 class='text-3xl text-white md:text-5xl font-bold tracking-wide md:p-0'>{{ title }}</h1>
+      </header>
+      <article class='mt-5 p-8 md:p-0 prose-lg lg:prose-xl dark:text-white prose-orange-dark'>
+        {{ content }}
+      </article>
+
+      <div class='h-24 p-4 rounded-lg mt-5 bg-gray-50 dark:bg-gray-dark'>
+        <div class='text-4xl'>Share</div>
+        <div class='flex flex-row space-x-4 justify-center'>
+          <div class='bg-blue-200 text-blue-600 w-8 h-8 shadow-md rounded-md flex justify-center items-center'>
+            {{ '/src/_assets/icons/twitter.svg' | svgContents: 'w-4 h-4 fill-current' }}
+          </div>
+          <div class='bg-blue-200 w-8 h-8 shadow-md rounded-md flex justify-center items-center'>
+            {{ '/src/_assets/icons/twitter.svg' | svgContents: 'w-4 h-4 fill-current' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+  <script>
+    {{ js | jsmin }}
   </script>
 </html>

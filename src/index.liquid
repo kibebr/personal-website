@@ -9,7 +9,7 @@
   {% include 'head.liquid' %}
   <body>
     <main id='main' class='antialiased text-black-apple dark:text-white-apple dark:bg-black transition-colors'>
-      <section class='px-5 pt-6'>
+      <section class='px-5 md:px-0 pt-6'>
         <div class='relative max-w-screen-sm m-0 m-auto text-center h-auto flex flex-col items-center'>
         <button id='dark-btn' class='absolute left-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
           {{ '/src/_assets/icons/night.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
@@ -26,11 +26,11 @@
       </div>
     </section>
 
-    <div class='px-5'>
+    <div class='px-5 md:px-0'>
       <div class='h-px max-w-screen-sm m-0 m-auto bg-gray-slight dark:bg-gray-slight-dark my-5'></div>
     </div>
 
-    <section class='px-5'>
+    <section class='px-5 md:px-0'>
       <div class='max-w-screen-sm m-0 m-auto h-auto flex flex-col'>
         <h2 class='text-2xl md:text-3xl font-bold'>Projects</h2>
         <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>What I've done during my free time</span>
@@ -152,28 +152,26 @@
       </div>
     </section>
 
-    <div class='px-5'>
+    <div class='px-5 md:px-0'>
       <div class='h-px max-w-screen-sm m-0 m-auto bg-gray-slight dark:bg-gray-slight-dark my-5'></div>
     </div>
 
-    <section class='px-5'>
+    <section class='px-5 md:px-0'>
       <div class='max-w-screen-sm m-0 m-auto h-auto'>
         <h2 class='font-bold text-3xl'>Articles</h2>
         <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>I write sometimes</span>
         <ul class='flex flex-col mt-3'>
-          <div class='flex flex-col md:flex-row mb-3'>
-            <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
-            <a href='#' class='text-blue-700'>Understanding the binary search algorithm</a>
-          </div>
-          <div class='flex flex-col md:flex-row'>
-            <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
-            <a href='#' class='text-blue-700'>I made a game in C run in a web browser and so can you</a>
-          </div>
+          {%- for post in collections.post -%}
+            <div class='flex flex-col md:flex-row mb-3'>
+              <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
+              <a href='{{ post.url }}' class='text-blue-700'>{{ post.data.title }}</a>
+            </div>
+          {%- endfor -%}
         </ul>
       </div>
     </section>
 
-    <section class='bg-black text-white-apple mt-5 h-auto px-5 py-20'>
+    <section class='bg-black text-white-apple mt-5 h-auto px-5 md:px-0 py-20'>
       <div class='max-w-screen-sm m-0 m-auto h-auto text-center'>
         <h2 class='font-bold text-2xl md:text-3xl'>I strive to <span class='text-red-dark'>write maintanable code.</span></h2>
 
@@ -217,7 +215,7 @@
       </div>
     </section>
 
-    <section class='flex justify-center px-5 bg-gray-dark text-white-apple h-56'>
+    <section class='flex justify-center px-5 md:px-0 bg-gray-dark text-white-apple h-56'>
       <div class='flex flex-col text-center py-6 max-w-screen-sm m-0 m-auto'>
         <h2 class='font-bold text-3xl'>Let's work together.</h2>
         <p class='text-gray-text-dark mt-3'>Do you have a project in mind? Let's talk about it. Coffee is on me.</p>

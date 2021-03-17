@@ -1,5 +1,7 @@
 ---
+tags: post
 layout: blog.liquid
+title: 'I made a game in C run in a web browser and so can you'
 ---
 
 It is undoubtedly true that most of the web is powered by Javascript nowadays; however, recent technologies such as WebAssembly are to change this scene — or, perhaps, some of it, as for reasons that will be noted later. In this article I will be demonstrating how I ported the well-known Snake game built with only C and [SDL](https://www.libsdl.org/index.php) to web browsers utilizing the aforementioned technology.
@@ -38,7 +40,7 @@ You will need [XCode and its command line tools.](https://superuser.com/question
 
 - **Linux**
 
-```
+```bash
 # Install Python
 sudo apt-get install python2.7
 
@@ -53,7 +55,7 @@ sudo apt-get install default-jre
 
 Great, now let’s install Emscripten itself. There’s two ways of downloading it: you can go to its [Github page](https://github.com/emscripten-core/emsdk) and press the green button titled “Download”, or cloning the repository using the command-line interface.
 
-```
+```bash
 # Get the emsdk repo
 git clone https://github.com/emscripten-core/emsdk.git
 
@@ -63,7 +65,7 @@ cd emsdk
 
 Either way, once you are inside the directory, run the following commands:
 
-```
+```bash
 # Fetch the latest version of the emsdk (not needed the first time you clone)
 git pull
 
@@ -89,7 +91,7 @@ Now that you have Emscripten set up in your OS, it’s time to make certain modi
 
 Head over to `main.c`, and I will walk you through the necessary changes made in order to make the game compile with Emscripten. As a comparison, [here’s the original `main.c`](https://gist.github.com/kibebr/d046c3977d783dbbd4d83616826e743c). As you can see, not that big of a difference: I added two functions that are of Emscripten and `#ifdef`s for conditional compilation. The rest of the source code is unchanged.
 
-```
+```c
 #ifdef __EMSCRIPTEN__
     #include <emscripten.h>
 #endif
@@ -133,7 +135,7 @@ Otherwise, if we are not compiling the game using Emscripten, then we can simply
 
 Alright! Emscripten also gives us a function to be called when the game is over: `emscripten_cancel_main_loop()` . Notice I use it in my `quit_game` function:
 
-```
+```c
 #ifdef __EMSCRIPTEN__
     emscripten_cancel_main_loop();
 #endif
@@ -143,7 +145,7 @@ Boom, that’s it! We are ready to compile our game to WASM and run it in our br
 
 Open your command-line interface tool, head over to the Snake’s game source code folder (a folder called `src`). As an example, here is how I would do it in using Linux:
 
-```
+```bash
 $ cd snake
 
 $ cd src
@@ -153,7 +155,7 @@ $ ls // displays all the files in the current directory, use it to make sure you
 
 Now, let’s type the following command to compile the game:
 
-```
+```bash
 $ emcc \
  -o app.html *.c \
  -Wall -g -lm \

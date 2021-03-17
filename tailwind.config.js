@@ -1,8 +1,30 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'black',
+            a: {
+              color: 'yellow'
+            },
+            strong: {
+              color: '#3182ce'
+            }
+          }
+        }
+      },
+      fontFamily: {
+        wotfard: ['Wotfard', ...fontFamily.sans]
+      },
       colors: {
+        blur: {
+          DEFAULT: 'rgba(255, 255, 255, 0.6)',
+          dark: 'rgba(29, 29, 31, 0.7)'
+        },
         pixelado: {
           pink: '#FA8BFF',
           blue: '#2BD2FF',
@@ -25,6 +47,7 @@ module.exports = {
           dark: 'rgb(255, 159, 10)'
         },
         gray: {
+          50: '#F4F5F7',
           slight: 'rgba(0, 0, 0, 0.1)',
           text: 'rgb(108, 108, 112)',
           'text-dark': '#A1A1A6',
@@ -38,6 +61,7 @@ module.exports = {
         },
       },
       width: {
+        inherit: 'inherit',
         'line': 'calc(98.5% - 80px)',
         '17': '4.25rem',
         '18': '4.5rem'
@@ -51,12 +75,9 @@ module.exports = {
       fontSize: {
         'smsm': '.80rem'
       },
-      backgroundImage: theme => ({
+      backgroundImage: () => ({
         wasm: "url('/_assets/icons/wasm-logo.svg')"
       }),
-      screens: {
-        'md': '500px'
-      },
       transitionProperty: {
         'height': 'height, max-height'
       },
@@ -64,13 +85,19 @@ module.exports = {
         fastyper: ['VT323']
       }
     },
+    backdropFilter: {
+      blur: 'blur(20px) saturate(180%)'
+    }
   },
   variants: {
     extend: {
       height: ['hover']
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-filters')
+  ],
   purge: process.env.NODE_ENV === 'production' ? {
     enabled: true,
     content: ['src/**/*.njk', 'src/**/*.js'],

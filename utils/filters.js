@@ -22,7 +22,7 @@ module.exports = {
           const minified = syncMinify(code, {
             module: true
           })
-          return code
+          return minified
         } catch (err) {
           console.error(err)
           return code

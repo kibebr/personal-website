@@ -3,6 +3,14 @@
 
 /* purgecss start ignore */
 
+article {
+  font-family: 'Wotfard';
+}
+
+code {
+  font-family: 'League Mono' !important;
+}
+
 .inset-center {
   top: 50%;
   left: 50%;
@@ -19,4 +27,14 @@ body.using-mouse :focus {
 
 .filter-dropshadow {
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  src: url('/_assets/fonts/wotfard-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'League Mono';
+  src: url('/_assets/fonts/LeagueMono-Regular.woff2') format('woff2');
 }

@@ -2,6 +2,7 @@ const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
 const svgContents = require('eleventy-plugin-svg-contents')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require('@11ty/eleventy-img')
 
 module.exports = function (eleventyConfig) {
@@ -9,10 +10,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/_assets/icons");
   eleventyConfig.addPassthroughCopy("src/_assets/videos");
   eleventyConfig.addPassthroughCopy("src/_assets/images");
+  eleventyConfig.addPassthroughCopy("src/_assets/fonts");
 
   // Filters 
   Object.keys(filters.universalFilters).forEach(filter => eleventyConfig.addFilter(filter, filters.universalFilters[filter]))
-  Object.keys(filters.nunjucksAsyncFilters).forEach(filter => eleventyConfig.addNunjucksAsyncFilter(filter, filters.nunjucksAsyncFilters[filter]))
+  Object.keys(filters.nunjucksAsyncFilters).forEach(filter => eleventyConfig.addFilter(filter, filters.nunjucksAsyncFilters[filter]))
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
@@ -25,11 +27,10 @@ module.exports = function (eleventyConfig) {
   })
 
   // shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode('Image', async (src, alt, classes) => {
+  eleventyConfig.addLiquidShortcode('Image', async (src, alt, classes) => {
     if (!alt) {
       throw new Error('Missing alt on image.')
     }
-    
 
     const stats = await Image(src, {
       formats: ['webp'],
@@ -51,6 +52,16 @@ module.exports = function (eleventyConfig) {
   // Inline svg
   eleventyConfig.addPlugin(svgContents)
 
+  // Syntax highlighting
+  eleventyConfig.addPlugin(syntaxHighlight)
+
+  // Liquid template engine options
+  eleventyConfig.setLiquidOptions({
+    dynamicPartials: true,
+    strict_filters: true,
+    root: ['src/_includes']
+  })
+
   return {
     dir: {
       input: "src/",
@@ -58,8 +69,8 @@ module.exports = function (eleventyConfig) {
       includes: '_includes',
       layouts: "_layouts"
     },
-    templateFormats: ["html", "md", "njk"],
-    htmlTemplateEngine: "njk",
+    templateFormats: ["html", "md", "liquid"],
+    htmlTemplateEngine: "liquid",
     passthroughFileCopy: true
   };
 };

@@ -1,9 +1,6 @@
 const { DateTime } = require('luxon')
 const { minify } = require('uglify-js')
-const deasync = require('deasync')
 const isProduction = process.env.ELEVENTY_ENV === 'production'
-
-const syncMinify = deasync(minify)
 
 module.exports = {
   universalFilters: {
@@ -19,7 +16,6 @@ module.exports = {
         return code
       } else {
         try {
-          console.log('minifying...')
           const minified = minify(code)
           return minified
         } catch (err) {

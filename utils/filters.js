@@ -1,6 +1,9 @@
 const { DateTime } = require('luxon')
 const { minify } = require('terser')
+const deasync = require('deasync')
 const isProduction = process.env.ELEVENTY_ENV === 'production'
+
+const syncMinify = deasync(minify)
 
 module.exports = {
   universalFilters: {
@@ -11,18 +14,18 @@ module.exports = {
     }
   },
   nunjucksAsyncFilters: {
-    jsmin: async (code, cb) => {
+    jsmin: (code) => {
       if (!isProduction) {
-        cb(null, code)
+        return code
       } else {
         try {
-          const minified = await minify(code, {
+          const minified = syncMinify(code, {
             module: true
           })
-          cb(null, minified.code)
+          return code
         } catch (err) {
           console.error(err)
-          cb(null, code)
+          return code
         }
       }
     }

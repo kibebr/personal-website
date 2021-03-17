@@ -1,14 +1,16 @@
 <head>
-  {% include 'meta.njk' %}
+  {% include 'meta.liquid' %}
   {% if site.env %}
     <!-- capture the CSS content as a Liquid variable -->
-    {% set css %}
+    {% capture css %}
       {% include 'app.compiled.css' %}
-    {% endset %}
+    {% endcapture %}
     <style> 
-      {{ css | safe }}
+      {{ css }}
     </style>
   {% else %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/static/app.compiled.css'>
   {% endif %}
 </head>

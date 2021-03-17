@@ -59,6 +59,9 @@ module.exports = {
       },
       transitionProperty: {
         'height': 'height, max-height'
+      },
+      fontFamily: {
+        fastyper: ['VT323']
       }
     },
   },

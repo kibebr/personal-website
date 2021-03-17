@@ -59,7 +59,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
     strict_filters: true,
-    root: ['src/_includes']
   })
 
   return {

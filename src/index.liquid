@@ -37,7 +37,7 @@
         <ul class='flex flex-col mt-3'>
           <li>
             <div aria-expanded='false' class='flex flex-row items-center accordion cursor-pointer'>
-              <div class='rounded-2xl bg-gradient-to-r from-pixelado-pink via-pixelado-blue to-pixelado-green w-17 h-17 md:w-18 md:h-18 mr-4 hover:animate-bounce'></div>
+              <div class='rounded-2xl bg-gradient-to-r from-pixelado-pink via-pixelado-blue to-pixelado-green w-17 h-17 md:w-18 md:h-18 mr-4'></div>
               <div class='flex flex-col justify-center'>
                 <h3>Pixelado</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your art</span>
@@ -230,6 +230,9 @@
 
       accordions.forEach(a => {
         const content = a.nextElementSibling
+        const button = a.children[2]
+
+        console.log(button)
 
         a.onclick = () => {
           const isAlreadyOpen = content.classList.contains('open')
@@ -239,6 +242,7 @@
           content.classList.toggle('h-auto')
           content.classList.toggle('max-h-24')
           content.classList.toggle('opacity-0')
+          button.classList.toggle('-rotate-90')
         }
 
       })

@@ -4,7 +4,7 @@
 	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
 	"scripts": {
 		"clean": "del dist",
-		"dev:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/tailwind.css -o src/_includes/app.compiled.css --watch --verbose",
+		"dev:postcss": "postcss src/_assets/stylesheets/tailwind.css -o src/_includes/app.compiled.css --watch --verbose",
 		"dev:11ty": "eleventy --serve --watch --port=3000",
 		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/tailwind.css -o src/_includes/app.compiled.css",
 		"build:11ty": "ELEVENTY_ENV=production eleventy",

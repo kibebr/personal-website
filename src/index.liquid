@@ -16,10 +16,10 @@
     <main id='main' class='antialiased text-black-apple dark:text-white-apple dark:bg-black transition-colors'>
       <section class='px-5 md:px-0 pt-6'>
         <div class='relative max-w-screen-sm m-0 m-auto text-center h-auto flex flex-col items-center'>
-        <button id='dark-btn' class='absolute left-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
+        <button aria-label='Dark mode' id='dark-btn' class='absolute left-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
           {{ '/src/_assets/icons/night.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
         </button>
-        <button class='absolute right-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white'>
+        <button aria-label='Translate' class='absolute right-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white'>
           {{ '/src/_assets/icons/translate.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
         </button>
         <video width='150' height='150' preload='none' loop autoplay playsinline muted>
@@ -41,7 +41,6 @@
         <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>What I've done during my free time</span>
 
         <ul class='flex flex-col mt-3'>
-
           <li>
             <div aria-expanded='false' class='flex flex-row items-center accordion cursor-pointer'>
               <div class='rounded-2xl bg-gradient-to-r from-pixelado-pink via-pixelado-blue to-pixelado-green w-17 h-17 md:w-18 md:h-18 mr-4 hover:animate-bounce'></div>
@@ -49,7 +48,7 @@
                 <h3>Pixelado</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your art</span>
               </div>
-              <button class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
+              <button aria-label='Open' class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
               </button>
             </div>
@@ -70,7 +69,7 @@
                 <h3>Fastyper</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Community-based speed typing test game</span>
               </div>
-              <button class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
+              <button aria-label='Open' class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current'}}
               </button>
             </div>
@@ -87,7 +86,7 @@
                 <h3>Spotiswype</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Find songs you'll enjoy just by swiping</span>
               </div>
-              <button class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
+              <button aria-label='Open' class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
               </button>
             </div>
@@ -104,7 +103,7 @@
                 <h3>WASM Games</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Games written in C ported to browsers</span>
               </div>
-              <button class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
+              <button aria-label='Open' class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
               </button>
             </div>
@@ -131,14 +130,14 @@
           <div class='w-full h-128 md:h-72 bg-gray rounded-2xl p-8 flex flex-col md:flex-row dark:bg-gray-dark justify-between' data-tilt>
             <div class='w-full md:w-1/2 flex flex-col'>
               <h2 class='text-3xl font-bold'>Portfolio and blog</h2>
-              <p class='text-gray-text dark:text-gray-text-dark'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-500 font-bold hover:underline'>Jamstack</a>.</p>
+              <p class='text-gray-600 dark:text-gray-text-dark'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-600 font-bold hover:underline'>Jamstack</a>.</p>
               <div class='font-bold flex flex-col md:flex-col text-gray-text dark:text-gray-text-dark text-smsm mt-auto'>
                 <div>
                   <span class>POWERED BY</span>
                   <div class='flex flex-row'>
                     {{ '/src/_assets/icons/javascript.svg' | svgContents: 'w-10 h-10 fill-current mr-1' }}
-                    <a href='https://11ty.dev/'>{{ '/src/_assets/icons/eleventy.svg' | svgContents: 'w-10 h-10 fill-current' }}</a>
-                    <a href='https://tailwindcss.com/'>{{ '/src/_assets/icons/tailwindcss.svg' | svgContents: 'w-10 h-10 fill-current' }}</a>
+                    <a aria-label='Eleventy website' href='https://11ty.dev/'>{{ '/src/_assets/icons/eleventy.svg' | svgContents: 'w-10 h-10 fill-current' }}</a>
+                    <a aria-label='Tailwind website' href='https://tailwindcss.com/'>{{ '/src/_assets/icons/tailwindcss.svg' | svgContents: 'w-10 h-10 fill-current' }}</a>
                   </div>
                 </div>
                 <span class='md:mt-3'>VIEW SOURCE</span>
@@ -165,14 +164,14 @@
       <div class='max-w-screen-sm m-0 m-auto h-auto'>
         <h2 class='font-bold text-3xl'>Articles</h2>
         <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>I write sometimes</span>
-        <ul class='flex flex-col mt-3'>
+        <div class='flex flex-col mt-3'>
           {%- for post in collections.post -%}
             <div class='flex flex-col md:flex-row mb-3'>
               <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
               <a href='{{ post.url }}' class='text-blue-700'>{{ post.data.title }}</a>
             </div>
           {%- endfor -%}
-        </ul>
+        </div>
       </div>
     </section>
 
@@ -185,7 +184,7 @@
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
             <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -196,7 +195,7 @@
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
             <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -207,7 +206,7 @@
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
             <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform focus:rotate-45'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform focus:rotate-45'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -224,7 +223,7 @@
       <div class='flex flex-col text-center py-6 max-w-screen-sm m-0 m-auto'>
         <h2 class='font-bold text-3xl'>Let's work together.</h2>
         <p class='text-gray-text-dark mt-3'>Do you have a project in mind? Let's talk about it. Coffee is on me.</p>
-        <a class='mt-3 font-bold text-blue-700 hover:underline' href='mailto:vitordriguesss@gmail.com'>Email me</a>
+        <a class='mt-3 font-bold text-blue-dark hover:underline' href='mailto:vitordriguesss@gmail.com'>Email me</a>
       </div>
     </section>
   </main>

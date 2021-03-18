@@ -1,15 +1,9 @@
 <head>
   {% include 'meta.liquid' %}
-  {% if site.env %}
-    {% capture css %}
-      {% include 'app.compiled.css' %}
-    {% endcapture %}
-    <style> 
-      {{ css }}
-    </style>
-  {% else %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='/static/app.compiled.css'>
-  {% endif %}
+  {% capture css %}
+    {% include 'app.compiled.css' %}
+  {% endcapture %}
+  <style> 
+{{ css }}
+  </style>
 </head>

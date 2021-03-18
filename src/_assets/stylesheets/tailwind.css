@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .inset-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  :focus {
+    outline: #08f auto 2px;
+  }
+
+  body.using-mouse :focus {
+    outline: none;
+  }
+
+}

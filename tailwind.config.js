@@ -98,10 +98,10 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwindcss-filters')
   ],
-  purge: process.env.NODE_ENV === 'production' ? {
+  purge: {
     enabled: true,
-    content: ['src/**/*.njk', 'src/**/*.js'],
+    content: ['src/**/*.liquid', 'src/**/*.js'],
     options: {
     }
-  } : {}
+  }
 }

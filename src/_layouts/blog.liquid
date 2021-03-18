@@ -3,19 +3,13 @@
   {% include 'scripts/tab-mouse-detect.js' %}
 {% endcapture %}
 
-{% if site.env %}
-  {% capture css %}
-    {% include 'app.compiled.css' %}
-  {% endcapture %}
-{% endif %}
+{% capture css %}
+  {% include 'app.compiled.css' %}
+{% endcapture %}
 
 <html lang='en'>
   <head>
     {% include 'meta' %}
-
-    {% if site.env == false %}
-      <link rel='stylesheet' href='/static/app.compiled.css'>
-    {% endif %}
 
     <style>
       {{ css }}
@@ -28,9 +22,23 @@
       html, body {
         font-family: 'Wotfard';
       }
+
+      code {
+        font-family: 'League Mono' !important;
+      }
+
+      @font-face {
+        font-family: 'Wotfard';
+        src: url('/_assets/fonts/wotfard-regular-webfont.woff2') format('woff2');
+      }
+
+      @font-face {
+        font-family: 'League Mono';
+        src: url('/_assets/fonts/LeagueMono-Regular.woff2') format('woff2');
+      }
     </style>
   </head>
-  <body class='antialiased text-black-apple font-wotfard dark:bg-black dark:text-white transition-colors'>
+  <body class='antialiased text-black-apple dark:bg-black dark:text-white transition-colors'>
     <div class='relative max-w-screen-sm m-0 m-auto'>
       <nav class='bg-white dark:bg-black flex flex-row backdrop-blur fixed p-4 max-w-screen-sm w-full items-center justify-between'>
         <div class='flex flex-row space-x-2 items-center'>

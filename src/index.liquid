@@ -1,9 +1,3 @@
-{% capture js %}
-  {% include 'scripts/dark-mode.js' %}
-  {% include 'scripts/tab-mouse-detect.js' %}
-  {% include 'scripts/tilt.js' %}
-{% endcapture %}
-
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -228,24 +222,29 @@
     </section>
   </main>
   <script>
+    {% capture js %}
+      {% include 'scripts/dark-mode.js' %}
+      {% include 'scripts/tab-mouse-detect.js' %}
+      {% include 'scripts/tilt.js' %}
+      const accordions = document.querySelectorAll('.accordion')
+
+      accordions.forEach(a => {
+        const content = a.nextElementSibling
+
+        a.onclick = () => {
+          const isAlreadyOpen = content.classList.contains('open')
+          a.setAttribute('aria-expanded', !isAlreadyOpen)
+          content.setAttribute('aria-hidden', isAlreadyOpen)
+          content.classList.toggle('open')
+          content.classList.toggle('h-auto')
+          content.classList.toggle('max-h-24')
+          content.classList.toggle('opacity-0')
+        }
+
+      })
+    {% endcapture %}
+
     {{ js | jsmin }}
-
-    const accordions = document.querySelectorAll('.accordion')
-
-    accordions.forEach(a => {
-      const content = a.nextElementSibling
-
-      a.onclick = () => {
-        const isAlreadyOpen = content.classList.contains('open')
-        a.setAttribute('aria-expanded', !isAlreadyOpen)
-        content.setAttribute('aria-hidden', isAlreadyOpen)
-        content.classList.toggle('open')
-        content.classList.toggle('h-auto')
-        content.classList.toggle('max-h-24')
-        content.classList.toggle('opacity-0')
-      }
-
-    })
   </script>
 </body>
 </html>

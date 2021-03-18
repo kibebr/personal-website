@@ -176,9 +176,9 @@
         <ul class='mt-10' aria-label='FAQ'>
 
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-            <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
+            <div aria-controls='content-1' aria-expanded='false' class='flex flex-row justify-between faq-accordion accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transform transition-transform'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -187,9 +187,9 @@
           </li>
 
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-            <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
+            <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between faq-accordion accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transform transition-transform'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -198,9 +198,9 @@
           </li>
 
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-            <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between accordion cursor-pointer'>
+            <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between faq-accordion accordion cursor-pointer'>
               <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform focus:rotate-45'>
+              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
@@ -226,13 +226,20 @@
       {% include 'scripts/dark-mode.js' %}
       {% include 'scripts/tab-mouse-detect.js' %}
       {% include 'scripts/tilt.js' %}
+
       const accordions = document.querySelectorAll('.accordion')
+
+      const onClickProjectBtn = (btn) => {
+        
+      }
+
+      const onClickFAQBtn = (btn) => {
+
+      }
 
       accordions.forEach(a => {
         const content = a.nextElementSibling
-        const button = a.children[2]
-
-        console.log(button)
+        const button = a.children[2] || a.children[1]
 
         a.onclick = () => {
           const isAlreadyOpen = content.classList.contains('open')
@@ -242,9 +249,13 @@
           content.classList.toggle('h-auto')
           content.classList.toggle('max-h-24')
           content.classList.toggle('opacity-0')
-          button.classList.toggle('-rotate-90')
-        }
 
+          if (a.classList.contains('faq-accordion')) {
+            button.classList.toggle('rotate-45')
+          } else {
+            button?.classList.toggle('-rotate-90')
+          }
+        }
       })
     {% endcapture %}
 

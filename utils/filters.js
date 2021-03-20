@@ -17,6 +17,7 @@ module.exports = {
       } else {
         try {
           const minified = minify(code)
+          console.log(minified.code)
           return minified.code
         } catch (err) {
           console.error(err)

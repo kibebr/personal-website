@@ -222,11 +222,7 @@
     </section>
   </main>
   <script>
-    {% capture js %}
-      {% include 'scripts/dark-mode.js' %}
-      {% include 'scripts/tab-mouse-detect.js' %}
-      {% include 'scripts/tilt.js' %}
-
+    {% capture test %}
       const accordions = document.querySelectorAll('.accordion')
 
       const onClickProjectBtn = (btn) => {
@@ -253,10 +249,17 @@
           if (a.classList.contains('faq-accordion')) {
             button.classList.toggle('rotate-45')
           } else {
-            button?.classList.toggle('-rotate-90')
+            button.classList.toggle('-rotate-90')
           }
         }
       })
+    {% endcapture %}
+
+    {% capture js %}
+      {{ test }}
+      {% include 'scripts/dark-mode.js' %}
+      {% include 'scripts/tab-mouse-detect.js' %}
+      {% include 'scripts/tilt.js' %}
     {% endcapture %}
 
     {{ js | jsmin }}

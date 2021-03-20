@@ -4,6 +4,7 @@ const collections = require('./utils/collections.js')
 const svgContents = require('eleventy-plugin-svg-contents')
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require('@11ty/eleventy-img')
+const markdownIt = require('markdown-it')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/static");
@@ -33,7 +34,7 @@ module.exports = function (eleventyConfig) {
     }
 
     const stats = await Image(src, {
-      formats: ['webp'],
+      formats: ['png'],
       widths: [225],
       outputDir: './dist/img/',
     })
@@ -60,6 +61,14 @@ module.exports = function (eleventyConfig) {
     dynamicPartials: true,
     strict_filters: true,
   })
+
+  // Markdown for blog
+  eleventyConfig.setLibrary('md', markdownIt().use(
+    require('markdown-it-anchor')
+  ))
+
+  // Lazyload images
+  // eleventyConfig.addPlugin(require('eleventy-plugin-lazyimages'))
 
   return {
     dir: {

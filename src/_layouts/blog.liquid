@@ -16,10 +16,6 @@
 
       {% include '../_assets/stylesheets/prism.css' %}
 
-      strong {
-        color: rgb(255, 45, 85) !important;
-      }
-
       html, body {
         font-family: 'Wotfard';
       }
@@ -41,12 +37,12 @@
   </head>
   <body class='antialiased text-black-apple dark:bg-black dark:text-white transition-colors'>
     <div class='relative max-w-screen-sm m-0 m-auto'>
-      <nav class='bg-white dark:bg-black flex flex-row backdrop-blur fixed p-4 max-w-screen-sm w-full items-center justify-between'>
+      <nav class='bg-white dark:bg-black flex flex-row fixed p-4 max-w-screen-sm w-full items-center justify-between'>
         <div class='flex flex-row space-x-2 items-center'>
           {% Image './src/_assets/images/memoji.png' 'Memoji of me.' 'w-14 h-14' %}
         </div>
         <div>
-          <button id='dark-btn' class='w-10 h-10 rounded-full flex justify-center items-center dark:text-white'>
+          <button aria-label='Dark mode' id='dark-btn' class='w-10 h-10 rounded-full flex justify-center items-center dark:text-white'>
             {{ '/src/_assets/icons/night.svg' | svgContents: 'w-4 h-4 fill-current' }}
           </button>
         </div>
@@ -54,7 +50,8 @@
       <header class='flex items-end bg-blue dark:bg-blue-dark p-4 h-96'>
         <h1 class='text-3xl text-white md:text-5xl font-bold tracking-wide md:p-0'>{{ title }}</h1>
       </header>
-      <article class='mt-5 p-8 md:p-0 prose-lg lg:prose-xl dark:text-white prose-orange-dark'>
+
+      <article class='mt-5 p-8 md:p-0 text-xl dark:text-white prose'>
         {{ content }}
       </article>
 

@@ -6,7 +6,7 @@ title: 'I made a game in C run in a web browser and so can you'
 
 It is undoubtedly true that most of the web is powered by Javascript nowadays; however, recent technologies such as WebAssembly are to change this scene — or, perhaps, some of it, as for reasons that will be noted later. In this article I will be demonstrating how I ported the well-known Snake game built with only C and [SDL](https://www.libsdl.org/index.php) to web browsers utilizing the aforementioned technology.
 
-# What is WebAssembly?
+## What is WebAssembly?
 
 You have most likely heard of the Assembly language — a low-level language with a strong link to the machine code instructions — as this sort of old and cryptic programming language; in simple terms, WebAssembly is the same thing (though not exactly Assembly), but capable of running in [_most_](https://caniuse.com/#feat=wasm) modern web browsers. One of the reasons it shines is the fact it is decoded and compiled to machine code, thus providing a way to run code on the web at near-native speed. Not only that, even though you could learn how to code WebAssembly by hand — which wouldn’t be efficient — , WebAssembly is rather used as a compilation target for low-level languages such as C, C++ and Rust; in Layman’s term, that means you can code in one of these languages, compile it to WebAssembly, and run it in the browser.
 
@@ -22,11 +22,11 @@ Although it is tempting to ditch Javascript — either because you hate it like 
 
 It is believed that the “script” in Javascript — which makes JS seem like a scripting language at first glance — will begin to be a reality with WASM doing the heavy-lifting and JS serving as a complement.
 
-# Porting our Snake game built with C and SDL to WebAssembly
+## Porting our Snake game built with C and SDL to WebAssembly
 
 Enough with introductions — let’s actually learn how to compile our Snake game to WebAssembly and deploy it on the web. Recall I said compile, therefore we will need another tool that helps us convert our C code to WASM; that is [Emscripten](https://emscripten.org/), a toolchain that helps us compile C and C++ code into WebAssembly — in Layman’s term, if you ever coded in C or C++, you can think of it as a Clang or GCC that, instead of compiling to machine code, it compiles to WebAssembly. But… what about the SDL library? Lucky for us, since SDL is quite renowned in the game development industry, Emscripten supports it right off the bat.
 
-#### Setting up Emscripten
+### Setting up Emscripten
 
 First, let’s install the prerequisites.
 
@@ -50,8 +50,6 @@ sudo apt-get install cmake
 # Install Java (optional, only needed for Closure Compiler minification)
 sudo apt-get install default-jre
 ```
-
----
 
 Great, now let’s install Emscripten itself. There’s two ways of downloading it: you can go to its [Github page](https://github.com/emscripten-core/emsdk) and press the green button titled “Download”, or cloning the repository using the command-line interface.
 
@@ -83,11 +81,9 @@ NOTE: if you are using Windows, make sure to run `emsdk` instead of `./emsdk`, a
 
 Awesome, you are half-way there!
 
-#### Compiling our Snake game built with C and SDL to WebAssembly
+### Compiling our Snake game built with C and SDL to WebAssembly
 
 Now that you have Emscripten set up in your OS, it’s time to make certain modifications in order to successfully run our game in the browser. First, code yourself something or, if you wish, head to the [source code](https://github.com/kibebr/sdl-to-wasm-games/tree/master/snake/src) of the game I have built as an demo for this article.
-
----
 
 Head over to `main.c`, and I will walk you through the necessary changes made in order to make the game compile with Emscripten. As a comparison, [here’s the original `main.c`](https://gist.github.com/kibebr/d046c3977d783dbbd4d83616826e743c). As you can see, not that big of a difference: I added two functions that are of Emscripten and `#ifdef`s for conditional compilation. The rest of the source code is unchanged.
 

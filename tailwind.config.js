@@ -4,19 +4,23 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: 'black',
+            color: theme('colors.black.apple'),
+            tabSize: '2',
+            p: {
+              'line-height': '1.6'
+            },
             a: {
-              color: 'yellow'
+              color: theme('colors.blue.DEFAULT'),
             },
             strong: {
-              color: '#3182ce'
+              color: theme('colors.pink.DEFAULT')
             }
           }
         }
-      },
+      }),
       fontFamily: {
         wotfard: ['Wotfard', ...fontFamily.sans]
       },
@@ -37,6 +41,10 @@ module.exports = {
         white: {
           DEFAULT: '#ffffff',
           apple: '#f5f5f7'
+        },
+        pink: {
+          DEFAULT: 'rgb(255, 45, 85)',
+          dark: 'rgb(255, 55, 95)'
         },
         blue: {
           DEFAULT: 'rgb(0, 122, 255)',

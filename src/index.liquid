@@ -56,12 +56,14 @@
 
           <li>
             <div aria-expanded='false' class='flex flex-row mt-3.5 items-center accordion cursor-pointer'>
-              <div class='relative flex-shrink-0 rounded-2xl bg-black border border-gray-slight-dark w-17 h-17 md:w-18 md:h-18 mr-4'>
-                <span class='absolute inset-center text-red-500 font-fastyper text-4xl italic'>f_</span>
+              <div class='relative flex justify-center bg-white items-center flex-shrink-0 rounded-2xl border border-gray-apple w-17 h-17 md:w-18 md:h-18 mr-4'>
+                <span class='text-white text-sm italic bg-black overflow-x-hidden'>
+                  NOVAS
+                </span>
               </div>
               <div class='flex flex-col justify-center'>
-                <h3>Fastyper</h3>
-                <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Community-based speed typing test game</span>
+                <h3>Novas</h3>
+                <span class='text-gray-text dark:text-gray-text-dark text-smsm'>News website</span>
               </div>
               <button aria-label='Open' class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current'}}
@@ -122,10 +124,12 @@
         <div id='projects-cards' class='flex flex-col mt-5'>
 
           <div class='w-full h-128 md:h-72 bg-gray rounded-2xl p-8 flex flex-col md:flex-row dark:bg-gray-dark justify-between' data-tilt>
-            <div class='w-full md:w-1/2 flex flex-col'>
-              <h2 class='text-3xl font-bold'>Portfolio and blog</h2>
-              <p class='text-gray-600 dark:text-gray-text-dark'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-600 font-bold hover:underline'>Jamstack</a>.</p>
-              <div class='font-bold flex flex-col md:flex-col text-gray-text dark:text-gray-text-dark text-smsm mt-auto'>
+            <div class='w-full md:w-1/2 flex flex-col space-y-4'>
+              <div>
+                <h2 class='text-3xl font-bold'>Portfolio and blog</h2>
+                <p class='text-gray-600 dark:text-gray-text-dark'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-600 font-bold hover:underline'>Jamstack</a>.</p>
+              </div>
+              <div class='font-bold flex flex-row md:flex-col text-gray-text dark:text-gray-text-dark text-smsm mt-auto'>
                 <div>
                   <span class>POWERED BY</span>
                   <div class='flex flex-row'>

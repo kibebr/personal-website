@@ -209,8 +209,6 @@ class VanillaTilt {
         `rotateY(0deg) ` +
         `scale3d(1, 1, 1)`;
     }
-
-    this.resetGlare();
   }
 
   updateInitialPosition() {
@@ -237,7 +235,6 @@ class VanillaTilt {
     this.settings.scale = 1;
     this.update();
     this.settings.scale = backupScale;
-    this.resetGlare();
   }
 
   getValues() {

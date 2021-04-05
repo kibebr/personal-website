@@ -63,6 +63,10 @@ module.exports = {
           'slight-dark': 'rgba(255, 255, 255, 0.1)',
           dark: '#0d0d0d'
         },
+        yellow: {
+          DEFAULT: 'rgb(255, 204, 0)',
+          dark: 'rgb(255, 214, 10)'
+        },
         red: {
           DEFAULT: 'rgb(255, 59, 48)',
           dark: 'rgb(255, 69, 58)'

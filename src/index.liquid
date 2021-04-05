@@ -10,11 +10,8 @@
     <main id='main' class='antialiased text-black-apple dark:text-white-apple dark:bg-black transition-colors'>
       <section class='px-5 md:px-0 pt-6'>
         <div class='relative max-w-screen-sm m-0 m-auto text-center h-auto flex flex-col items-center'>
-        <button aria-label='Dark mode' id='dark-btn' class='absolute left-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
+        <button aria-label='Dark mode' id='dark-btn' class='absolute right-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white-apple'>
           {{ '/src/_assets/icons/night.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
-        </button>
-        <button aria-label='Translate' class='absolute right-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white'>
-          {{ '/src/_assets/icons/translate.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
         </button>
         <video width='150' height='150' preload='none' loop autoplay playsinline muted>
           <source src='_assets/videos/compressed.webm' type='video/webm' />
@@ -40,7 +37,7 @@
               <div class='rounded-2xl bg-gradient-to-r from-pixelado-pink via-pixelado-blue to-pixelado-green w-17 h-17 md:w-18 md:h-18 mr-4'></div>
               <div class='flex flex-col justify-center'>
                 <h3>Pixelado</h3>
-                <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your art</span>
+                <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Draw and share your (pixel) art</span>
               </div>
               <button aria-label='Open' class='relative rounded-full w-9 h-9 bg-gray ml-auto dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
                 {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
@@ -48,7 +45,15 @@
             </div>
 
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              this is the content
+              <div class='flex flex-col space-y-2'>
+                <div>
+                  <span class='font-bold'>pixelado</span> started as a simple etch-a-sketch app and I1.
+                </div>
+                <div class='flex flex-col'>
+                  <a href='https://pixelado.netlify.app' class='font-bold text-blue dark:text-blue-dark'>Visit website.</a>
+                  <a href='https://github.com/kibebr/pixelado' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                </div>
+              </div>
             </div>
 
             <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
@@ -70,14 +75,22 @@
               </button>
             </div>
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              this is the content
+              <div>
+                <div class='flex flex-col'>
+                  <a href='https://novas-eight.vercel.app' class='font-bold text-blue dark:text-blue-dark'>Visit website.</a>
+                  <a href='https://github.com/kibebr/novas' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                </div>
+              </div>
             </div>
             <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
           </li>
 
           <li>
             <div aria-expanded='false' class='flex flex-row items-center mt-3.5 accordion cursor-pointer'>
-              <div class='rounded-2xl bg-red-500 w-17 h-17 md:w-18 md:h-18 mr-4'></div>
+              <div class='rounded-2xl bg-green-500 w-17 h-17 md:w-18 md:h-18 mr-4 flex justify-center items-center'>
+                <span class='text-white font-bold text-5xl'>S</span>
+              </div>
+
               <div class='flex flex-col justify-center'>
                 <h3>Spotiswype</h3>
                 <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Find songs you'll enjoy just by swiping</span>
@@ -87,11 +100,47 @@
               </button>
             </div>
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              this is the content
+              <div>
+                <div class='flex flex-col'>
+                  <a href='https://spotiswype.netlify.app' class='font-bold text-blue dark:text-blue-dark'>Visit website.</a>
+                  <a href='https://github.com/kibebr/spotiswype' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                </div>
+              </div>
             </div>
             <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
           </li>
 
+          <li>
+            <div aria-expanded='false' class='flex flex-row items-center accordion cursor-pointer mt-3.5'>
+              <div class='w-17 h-17 md:w-18 md:h-18 mr-4 flex-shrink-0'>
+                {% Image './src/_assets/images/fp-ts.png', 'fp-ts Logo', 'rounded-2xl' %}
+              </div>
+              <div class='flex flex-col justify-center'>
+                <h3>fp-ts Website</h3>
+                <span class='text-gray-text dark:text-gray-text-dark text-smsm'>Brand new home for the fp-ts library</span>
+              </div>
+              <div class='flex flex-row ml-auto items-center space-x-2'>
+                <div class='font-bold bg-red dark:bg-red-dark text-white rounded-sm p-1 text-xs tracking-wide text-center'>
+                  WORK IN PROGRESS
+                </div>
+                <button aria-label='Open' class='relative flex-shrink-0 rounded-full w-9 h-9 bg-gray dark:bg-gray-dark dark:text-white transition-transform transform hover:rotate-90 focus:rotate-90'>
+                  {{ '/src/_assets/icons/right-arrow.svg' | svgContents: 'absolute w-4 h-4 inset-center fill-current' }}
+                </button>
+              </div>
+            </div>
+
+            <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
+              <div class='flex justify-center items-center'>
+                {% Image './src/_assets/images/fp-ts-website.png', 'A phone with this portfolio on the screen.', 'w-96 h-40 rounded-md' %}
+              </div>
+
+              <div class='my-3'></div>
+
+              <a href='https://github.com/gcanti/fp-ts' />fp-ts</a> is the number one functional programming library for Typescript. In contrast to its creator, I am not an expert in functional programming; however, I figured out I could still somehow contribute to the library: some people, including me, find fp-ts' docs not to be that convenient. I then decided to create a brand new docs for fp-ts with a few things in mind: better and faster search, keyboard-driven, and with 
+            </div>
+
+            <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
+          </li>
           <li>
             <div aria-expanded='false' class='flex flex-row mt-3.5 items-center accordion cursor-pointer'>
               <div class='rounded-2xl flex-shrink-0 bg-wasm bg-cover w-17 h-17 md:w-18 md:h-18 mr-4'></div>
@@ -105,16 +154,11 @@
             </div>
 
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              this is the content
-              </br>
-              this is the content
-              </br>
-              this is the content
-              </br>
-              this is the content
-              </br>
-              this is the content
-              </br>
+              <div>
+                <div class='flex flex-col'>
+                  <a href='https://github.com/kibebr/sdl-to-wasm-games' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                </div>
+              </div>
             </div>
 
           </li>
@@ -146,10 +190,18 @@
             </div>
           </div>
 
-          <div class='w-full h-128 md:h-72 bg-purple-500 rounded-2xl mt-3 flex flex-row p-8' data-tilt>
-            <h2 class='text-3xl font-bold text-white-apple'>Spotiswype</h2>
-          </div>
-
+          {% comment %} <div class='w-full h-128 md:h-96 bg-white border border-grey shadow-sm rounded-2xl mt-3 flex flex-row p-8' data-tilt> {% endcomment %}
+          {% comment %}   <div class='flex flex-col w-full items-center'> {% endcomment %}
+          {% comment %}     <span class='text-white bg-black text-5xl font-bold italic'>NOVAS</span> {% endcomment %}
+          {% comment %}     <div class='my-1'></div> {% endcomment %}
+          {% comment %}     <p class='text-gray-text'>News website. Made with Next.js.</p> {% endcomment %}
+          {% comment %}     <div class='flex flex-row h-40'> {% endcomment %}
+          {% comment %}       {% Image './src/_assets/images/cut-novas-desktop.png', 'fp-ts Logo', 'rounded-2xl' %} {% endcomment %}
+          {% comment %}       {% Image './src/_assets/images/cut-novas-mobile.png', 'fp-ts Logo', 'rounded-2xl' %} {% endcomment %}
+          {% comment %}     </div> {% endcomment %}
+          {% comment %}   </div> {% endcomment %}
+          {% comment %} </div> {% endcomment %}
+          
         </div>
       </div>
     </section>
@@ -161,7 +213,6 @@
     <section class='px-5 md:px-0'>
       <div class='max-w-screen-sm m-0 m-auto h-auto'>
         <h2 class='font-bold text-3xl'>Articles</h2>
-        <span class='text-gray-text dark:text-gray-text-dark text-sm md:text-base'>I write sometimes</span>
         <div class='flex flex-col mt-3'>
           {%- for post in collections.post -%}
             <div class='flex flex-col md:flex-row mb-3'>
@@ -175,8 +226,10 @@
 
     <section class='bg-black text-white-apple mt-5 h-auto px-5 md:px-0 py-20'>
       <div class='max-w-screen-sm m-0 m-auto h-auto text-center'>
-        <h2 class='font-bold text-2xl md:text-3xl'>I strive to <span class='text-red-dark'>write maintanable code.</span></h2>
-
+        <h2 class='font-bold text-2xl md:text-3xl'>
+          I strive to 
+          <span id='strives-placeholder' class='text-red-dark'></span>
+        </h2>
         <ul class='mt-10' aria-label='FAQ'>
 
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
@@ -186,33 +239,26 @@
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
-            <div id='content-1' class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
+            <div id='content-1' class='opacity-0 overflow-hidden transition-all duration-500 max-h-0 text-left' aria-hidden='true'>
+              <div class='font-bold text-gray-text-dark'>
+                According to Amazon, 100ms more of latency could result them 1% of their sales. According to Google, 500ms of latency could drop its traffic by 20%. Nowadays, more than ever, performance is important for businesses. 
+              </div>
             </div>
           </li>
 
           <li class='border-b py-5 pb-4 border-gray-slight-dark'>
             <div aria-controls='content-2' aria-expanded='false' class='flex flex-row justify-between faq-accordion accordion cursor-pointer'>
-              <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
+              <span class='font-bold text-lg md:text-xl'>Accessibility in the web</span>
               <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transform transition-transform'>
                 {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
               </button>
             </div>
             <div id='content-2' class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
+              <p class='text-left text-gray-text-dark font-bold'>
+              According to Scope and quoting UK government figures, there are ~13.9 million disabled people in the UK. Out of those, 2 million, for instance, have a sight loss that impacts their lives. When designing a website, it is important to keep in mind that 
+              </p>
             </div>
           </li>
-
-          <li class='border-b py-5 pb-4 border-gray-slight-dark'>
-            <div aria-controls='content-3' aria-expanded='false' class='flex flex-row justify-between faq-accordion accordion cursor-pointer'>
-              <span class='font-bold text-lg md:text-xl'>Why is performance important?</span>
-              <button aria-label='Open' class='relative rounded-full w-8 h-8 bg-gray-text-dark transition-transform transform'>
-                {{ '/src/_assets/icons/plus.svg' | svgContents: 'absolute inset-center w-4 h-4' }}
-              </button>
-            </div>
-            <div id='content-3' class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              this is the content
-            </div>
-          </li>
-
         </div>
       </div>
     </section>
@@ -227,16 +273,19 @@
   </main>
 
   <script>
-    {% capture test %}
+    {% capture additional %}
+      const strives = [{
+        content: 'write quality code.',
+        color: 'text-red-dark'
+      }, {
+        content: 'develop accessible software.',
+        color: 'text-blue-dark'
+      }, {
+        content: 'consider performance.',
+        color: 'text-yellow-dark'
+      }]
+      const strivesPlaceholder = document.getElementById('strives-placeholder')
       const accordions = document.querySelectorAll('.accordion')
-
-      const onClickProjectBtn = (btn) => {
-        
-      }
-
-      const onClickFAQBtn = (btn) => {
-
-      }
 
       accordions.forEach(a => {
         const content = a.nextElementSibling
@@ -248,8 +297,9 @@
           content.setAttribute('aria-hidden', isAlreadyOpen)
           content.classList.toggle('open')
           content.classList.toggle('h-auto')
-          content.classList.toggle('max-h-24')
+          content.classList.toggle('max-h-96')
           content.classList.toggle('opacity-0')
+          content.classList.toggle('mt-3')
 
           if (a.classList.contains('faq-accordion')) {
             button.classList.toggle('rotate-45')
@@ -258,10 +308,27 @@
           }
         }
       })
+
+      const setStrive = (strive) => {
+        strivesPlaceholder.textContent = strive.content
+        strivesPlaceholder.className = strive.color
+      }
+
+      setStrive(strives[0])
+      let i = 1
+      setInterval(() => {
+        setStrive(strives[i])
+
+        i += 1
+
+        if (i >= strives.length) {
+          i = 0
+        }
+      }, 2000)
     {% endcapture %}
 
     {% capture js %}
-      {{ test }}
+      {{ additional }}
       {% include 'scripts/dark-mode.js' %}
       {% include 'scripts/tab-mouse-detect.js' %}
       {% include 'scripts/tilt.js' %}

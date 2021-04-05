@@ -17,4 +17,14 @@
     outline: none;
   }
 
+  div[aria-hidden=true] a[href],
+  div[aria-hidden=true] area[href], 
+  div[aria-hidden=true] input:not([disabled]), 
+  div[aria-hidden=true] select:not([disabled]), 
+  div[aria-hidden=true] textarea:not([disabled]), 
+  div[aria-hidden=true] button:not([disabled]), 
+  div[aria-hidden=true] [tabindex]:not([disabled]), 
+  div[aria-hidden=true] [contenteditable=true]:not([disabled]) {
+    visibility: hidden;
+  }
 }

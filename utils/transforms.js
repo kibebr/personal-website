@@ -5,11 +5,13 @@ module.exports = {
   compressHTML: (content, outputPath) => {
     if (outputPath.endsWith(".html") && isProduction) {
       let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
+        minifyURLs: true,
+        minifyJS: true,
         minifyCSS: true,
-        minifyJS: true
+        removeComments: true,
+        removeRedundantAttributes: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true
       });
       return minified;
     }

@@ -50,8 +50,8 @@
                   <span class='font-bold'>pixelado</span> started as a simple etch-a-sketch; however, as I kept learning1
                 </div>
                 <div class='flex flex-col'>
-                  <a href='https://pixelado.netlify.app' class='font-bold text-blue dark:text-blue-dark'>Visit website.</a>
-                  <a href='https://github.com/kibebr/pixelado' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                  <a href='https://pixelado.netlify.app' class='font-bold text-blue dark:text-blue-dark'>Visit website</a>
+                  <a href='https://github.com/kibebr/pixelado' class='font-bold text-blue dark:text-blue-dark'>Visit source code</a>
                 </div>
               </div>
             </div>
@@ -75,10 +75,20 @@
               </button>
             </div>
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-              <div>
+              <div class='flex flex-col space-y-2'>
+                <div>
+                  <strong>Novas</strong> is a general news website. Heavily inspired by 
+                  <a href='https://futurism.com' class='text-blue dark:text-blue-dark'>
+                    Futurism.
+                  </a>
+                </div>
+                <div>
+                  <strong>Novas</strong> uses HTML, CSS, TailwindCSS, React.js, Next.js, Styled Components, and Typescript.<br>
+                  <strong>Novas</strong> uses the Jamstack principle; all categories and their articles are fetched (100% functionally) using the fp-ts library. Once fetched, Next.js generates a static page for each article.
+                </div>
                 <div class='flex flex-col'>
-                  <a href='https://novas-eight.vercel.app' class='font-bold text-blue dark:text-blue-dark'>Visit website.</a>
-                  <a href='https://github.com/kibebr/novas' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                  <a href='https://novas-eight.vercel.app' class='font-bold text-blue dark:text-blue-dark'>Visit website</a>
+                  <a href='https://github.com/kibebr/novas' class='font-bold text-blue dark:text-blue-dark'>Visit source code</a>
                 </div>
               </div>
             </div>
@@ -100,12 +110,20 @@
               </button>
             </div>
             <div class='opacity-0 overflow-hidden transition-all duration-500 max-h-0' aria-hidden='true'>
-            <div>
+              <div class='flex flex-col space-y-2'>
+                <div>
+                  <strong>Spotiswype</strong> lets you find new songs that match your taste by using your Spotify's Liked Songs or any of your playlists. Simply connect your Spotify account with Spotiswype, and swipe songs you enjoy, like Tinder.
+                </div>
+                <div>
+                  <strong>Spotiswype</strong>'s front-end is built with HTML, CSS, TailwindCSS, Typescript, and React.js. It extensively uses the Spotify API to fetch the user's playlists and Liked Songs. The fetching of data is 100% functional and the fp-ts library is used.
+                </div>
                 <div class='flex flex-col'>
                   <a href='https://spotiswype.netlify.app' class='font-bold text-blue dark:text-blue-dark'>
-                    Visit website.
+                    Visit website
                   </a>
-                  <a href='https://github.com/kibebr/spotiswype' class='font-bold text-blue dark:text-blue-dark'>Visit source code.</a>
+                  <a href='https://github.com/kibebr/spotiswype' class='font-bold text-blue dark:text-blue-dark'>
+                    Visit source code
+                  </a>
                 </div>
               </div>
             </div>
@@ -136,9 +154,25 @@
                 {% Image './src/_assets/images/fp-ts-website.png', 'A phone with this portfolio on the screen.', 'w-96 h-40 rounded-md' %}
               </div>
 
-              <div class='my-3'></div>
+              <div class='my-2'></div>
 
-              <a href='https://github.com/gcanti/fp-ts'>fp-ts</a> is the number one functional programming library for Typescript. In contrast to its creator, I am not an expert in functional programming; however, I figured out I could still somehow contribute to the library: some people, including me, find fp-ts' docs not to be that convenient. I then decided to create a brand new docs for fp-ts with a few things in mind: better and faster search, keyboard-driven, and with 
+              <div>
+                <a href='https://github.com/gcanti/fp-ts'>fp-ts</a> is the number one functional programming library for Typescript. In contrast to its creator, I am not an expert in functional programming; however, I figured out I could still somehow contribute to the library: some people, including me, find fp-ts' docs not to be that convenient. I then decided to create a brand new docs for fp-ts with a few things in mind: better and faster search, keyboard-driven, and with 
+              </div>
+
+              <div class='my-2'></div>
+
+              <div>
+                <h2 class='font-bold'>Powered by:</h2>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>TailwindCSS</li>
+                  <li>Javascript with Typescript</li>
+                  <li>React.js</li>
+                  <li>Next.js</li>
+                </ul>
+              </div>
             </div>
 
             <div class='h-px w-line float-right mt-2.5 bg-gray-slight dark:bg-gray-slight-dark'></div>
@@ -175,7 +209,7 @@
           <div class='w-full h-128 md:h-72 bg-gray rounded-2xl p-8 flex flex-col md:flex-row dark:bg-gray-dark justify-between' data-tilt>
             <div class='w-full md:w-1/2 flex flex-col space-y-4'>
               <div>
-                <h2 class='text-3xl font-bold'>Portfolio and blog</h2>
+                <h2 class='text-3xl font-bold'>Portfolio</h2>
                 <p class='text-gray-600 dark:text-gray-text-dark'>Developed using the principles of <a href='https://jamstack.org/' class='text-purple-600 font-bold hover:underline'>Jamstack</a>.</p>
               </div>
               <div class='font-bold flex flex-row md:flex-col text-gray-text dark:text-gray-text-dark text-smsm mt-auto'>
@@ -219,12 +253,10 @@
       <div class='max-w-screen-sm m-0 m-auto h-auto'>
         <h2 class='font-bold text-3xl'>Articles</h2>
         <div class='flex flex-col mt-3'>
-          {%- for post in collections.post -%}
-            <div class='flex flex-col md:flex-row mb-3'>
-              <span class='text-gray-text dark:text-gray-text-dark mr-3'>Mar 17</span>
-              <a href='{{ post.url }}' class='text-blue-700'>{{ post.data.title }}</a>
-            </div>
-          {%- endfor -%}
+          <div class='flex flex-col md:flex-row mb-3'>
+            <span class='text-gray-text dark:text-gray-text-dark mr-3'>Apr 23</span>
+            <a href='https://medium.com/swlh/i-made-a-game-in-c-run-in-a-web-browser-and-so-can-you-2911b9fe2368?sk=b839987dd50740634c898d90d7673bc7' class='text-blue-700'>I made a game in C run in a web browser and so can you</a>
+          </div>
         </div>
       </div>
     </section>

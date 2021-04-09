@@ -34,8 +34,8 @@ module.exports = function (eleventyConfig) {
     }
 
     const stats = await Image(src, {
-      formats: ['png'],
-      widths: [225],
+      formats: ['webp'],
+      widths: [500],
       outputDir: './dist/img/',
     })
 
